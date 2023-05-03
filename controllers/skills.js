@@ -14,7 +14,24 @@ function show(req, res) {
   });
 }
 
+function newSkill(req, res) { 
+  res.render('skills/new', { title: 'New Skill' })
+};
+
+function create(req, res) { 
+  Skill.create(req.body)
+  res.redirect('/skills')
+};
+
+function deleteSkill(req, res) {
+  Skill.deleteOne(req.params.id)
+  res.redirect('/skills')
+};
+
 module.exports = {
   index,
   show,
+  newSkill,
+  create,
+  deleteSkill,
 };

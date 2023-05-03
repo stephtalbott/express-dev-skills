@@ -1,20 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Express Dev Skills</title>
-</head>
-<body>
-    
-    <h3>
-        <%= skill.skill %>
-    </h3>
+<%- include('../partials/header') %>
 
-    <h3>
-        Complete: <%= skill.acquired ? 'Yes' : 'No' %>
-    </h3>
 
-</body>
-</html>
+    <h3>Important Developer Skills</h3>
+    <a href="/skills/new">Add Skill</a>
+    <ul>
+        
+            <li>
+                <form action="/skills/<%= skill.id %>?_method=DELETE" method="POST">
+                    <button type="submit">X</button>
+                </form>
+
+                <a href="/skills/<%= skill.id %>">
+                    <%= skill.skill %>
+                </a>
+                <%= skill.skill %>
+                    -
+                    <%= skill.acquired ? 'acquired' : 'not acquired' %>
+            </li>
+           
+    </ul>
+
+<%- include('../partials/footer') %>
