@@ -8,11 +8,11 @@
             <li>
                 <form action="/skills/<%= skill.id %>?_method=DELETE" method="POST">
                     <button type="submit">X</button>
+                    <input>
                 </form>
 
-                <a href="/skills/<%= skill.id %>">
-                    <%= skill.skill %>
-                </a>
+               
+                   
                 <%= skill.skill %>
                     -
                     <%= skill.acquired ? 'acquired' : 'not acquired' %>
